@@ -3,7 +3,7 @@ const path = require('path');
 
 class ReadThemes {
   static async getThemes() {
-    const files = await fsp.readdir('./themes');
+    const files = await fsp.readdir('./topics');
     return files.map((file) => ({
       name: path.basename(file, '.json'),
       value: file,
@@ -11,7 +11,7 @@ class ReadThemes {
   }
 
   static async loadQuestions(themeFile) {
-    const content = await fsp.readFile(`./themes/${themeFile}`, 'utf-8');
+    const content = await fsp.readFile(`./topics/${themeFile}`, 'utf-8');
     return JSON.parse(content);
   }
 
@@ -23,4 +23,4 @@ class ReadThemes {
 
 module.exports = ReadThemes;
 
-//hello
+
