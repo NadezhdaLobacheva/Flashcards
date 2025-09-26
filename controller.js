@@ -2,7 +2,6 @@ const ReadThemes = require('./model');
 const View = require('./View');
 
 class Controller {
-  
   static async start() {
     await View.greetings();
 
@@ -23,6 +22,12 @@ class Controller {
       if (isTrue) {
         score++;
       }
+      View.showMiddleRes(isTrue, q);
     }
+
+    View.showResult(score, questions.length);
   }
 }
+module.exports = Controller;
+
+///////
